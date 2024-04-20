@@ -5,6 +5,7 @@ import allure
 
 
 class TestPersonalAccount:
+    @allure.title('Проверка раздела: Личный кабинет')
     @allure.description('переход по клику на «Личный кабинет»')
     def test_click_personal_account(self, browser):
         login_page = LoginPage(browser)
@@ -13,6 +14,7 @@ class TestPersonalAccount:
         login_page.wait_element(mp.check_text_account_pages)
         assert login_page.get_element_text(mp.check_text_account_pages) == 'В этом разделе вы можете изменить свои персональные данные'
 
+    @allure.title('Проверка раздела: Личный кабинет')
     @allure.description('переход в раздел «История заказов»,')
     def test_click_order_history(self, browser):
         login_page = LoginPage(browser)
@@ -22,6 +24,7 @@ class TestPersonalAccount:
         login_page.wait_element(mp.check_text_order_history)
         assert login_page.get_element_text(mp.check_text_order_history) in "Выполнен"
 
+    @allure.title('Проверка раздела: Личный кабинет')
     @allure.description('выход из аккаунта.')
     def test_exit_personal_account(self, browser):
         login_page = LoginPage(browser)

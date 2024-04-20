@@ -5,6 +5,7 @@ import allure
 
 class TestCheckRecoveryPasswordPage:
 
+    @allure.title('Проверка функции: Восстановление пароля')
     @allure.description('переход на страницу восстановления пароля по кнопке «Восстановить пароль»')
     def test_check_recovery_password_page(self, browser):
         base_page = BasePage(browser)
@@ -12,6 +13,7 @@ class TestCheckRecoveryPasswordPage:
         base_page.click_on_element(rp.recovery_password)
         assert base_page.get_element_text(rp.check_text_on_page_recovery_password) == 'Восстановление пароля'
 
+    @allure.title('Проверка функции: Восстановление пароля')
     @allure.description('ввод почты и клик по кнопке «Восстановить»')
     def test_input_mail_and_click_button_recovery(self, browser):
         base_page = BasePage(browser)
@@ -21,6 +23,7 @@ class TestCheckRecoveryPasswordPage:
         base_page.click_on_element(rp.recovery_button)
         assert base_page.get_element_text(rp.check_text_code_recovery_password) == 'Введите код из письма'
 
+    @allure.title('Проверка функции: Восстановление пароля')
     @allure.description('клик по кнопке показать/скрыть пароль делает поле активным — подсвечивает его')
     def test_click_eye_button(self, browser):
         base_page = BasePage(browser)

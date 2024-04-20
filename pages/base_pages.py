@@ -12,6 +12,7 @@ class BasePage:
 
     def click_on_element(self, locator):
         button = self.browser.find_element(*locator)
+        WebDriverWait(self.browser, 10).until(ec.element_to_be_clickable(locator))
         button.click()
 
     def get_element_text(self, locator):
